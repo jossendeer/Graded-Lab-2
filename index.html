@@ -1,0 +1,105 @@
+<!-- Jossen Deer (2001616)
+     Web Programming UM2
+     Graded Lab #2 - Rent Receipt Page - https://jossendeer.github.io/Graded-Lab-2/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent Receipt Generator</title>
+
+  <!-- Google Fonts & Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1><span class="material-icons">receipt_long</span> Rent Receipt Generator</h1>
+  </header>
+
+  <main>
+    <!-- ===== Rent Form Section ===== -->
+    <section class="form-section">
+      <h2>Enter Receipt Details</h2>
+
+      <form id="receiptForm">
+        <div class="form-grid">
+          <label>
+            Tenant Name
+            <input type="text" id="tenantName" placeholder="John Deere" maxlength="50" required>
+          </label>
+
+          <label>
+            Property Address
+            <input type="text" id="propertyAddress" placeholder="1738 Fetty Street, Kingston" maxlength="100" required>
+          </label>
+
+          <label>
+            Rent Amount (JMD)
+            <input type="number" id="rentAmount" placeholder="50000" min="0" step="0.01" required>
+          </label>
+
+          <label>
+            Payment Date
+            <input type="date" id="paymentDate" required>
+          </label>
+
+          <label>
+            Payment Method
+            <select id="paymentMethod" required>
+              <option value="">Select Method</option>
+              <option>Cash</option>
+              <option>Cheque</option>
+              <option>Bank Transfer</option>
+              <option>Online Payment</option>
+            </select>
+          </label>
+
+          <label>
+            Landlord Name
+            <input type="text" id="landlordName" placeholder="Trap Queen" maxlength="50" required>
+          </label>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="action-btn" id="generateBtn">Generate Receipt</button>
+          <button type="button" class="action-btn" id="printBtn">Print</button>
+          <button type="button" class="action-btn" id="downloadBtn">Download</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===== Generated Receipt Section ===== -->
+    <section class="receipt-section" id="receiptDisplay">
+      <article class="receipt">
+        <h2>Rent Receipt</h2>
+        <div class="receipt-body">
+          <p><strong>Tenant Name:</strong> <span id="rTenantName">____________________</span></p>
+          <p><strong>Property Address:</strong> <span id="rPropertyAddress">____________________</span></p>
+          <p><strong>Rent Amount:</strong> <span id="rRentAmount">____________________</span></p>
+          <p><strong>Payment Date:</strong> <span id="rPaymentDate">____________________</span></p>
+          <p><strong>Payment Method:</strong> <span id="rPaymentMethod">____________________</span></p>
+          <p><strong>Landlord:</strong> <span id="rLandlordName">____________________</span></p>
+        </div>
+        <footer>
+          <p>Thank you for your payment.</p>
+          <p><em>This is a computer-generated receipt.</em></p>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Property Management Startup | Designed for Graded Lab 2</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/*Jossen Deer (2001616)
+  Web Programming UM2
+  Graded Lab #2 - Rent Receipt Page - https://jossendeer.github.io/Graded-Lab-2/
+*/
+
+/* ---------- Global Styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 2px solid #000;
+}
+
+footer {
+  border-top: 2px solid #000;
+  border-bottom: none;
+  margin-top: 2rem;
+}
+
+h1, h2 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Form Section ---------- */
+.form-section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+}
+
+input, select {
+  padding: 0.5rem;
+  border: 1px solid #000;
+  background: #f9f9f9;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+  background: #fff;
+  outline: none;
+  border-color: #333;
+}
+
+/* ---------- Buttons ---------- */
+.btn-group {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.action-btn {
+  border: 1px solid #000;
+  background: #fff;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+  background: #000;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ---------- Receipt Section ---------- */
+.receipt-section {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 700px;
+  border: 2px dashed #000;
+  background: #fff;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.receipt {
+  text-align: left;
+}
+
+.receipt h2 {
+  text-align: center;
+  border-bottom: 1px solid #000;
+  padding-bottom: 0.5rem;
+}
+
+.receipt-body {
+  margin-top: 1rem;
+}
+
+.receipt-body p {
+  margin: 0.5rem 0;
+}
+
+.receipt footer {
+  border-top: 1px solid #000;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ---------- Animation ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Print Styles ---------- */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .receipt-section, .receipt-section * {
+    visibility: visible;
+  }
+  .receipt-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}

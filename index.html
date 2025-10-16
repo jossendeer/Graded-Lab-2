@@ -36,6 +36,11 @@
           </label>
 
           <label>
+            Phone Number
+            <input type="tel" id="phoneNumber" placeholder="(876) 555-1234" pattern="\(\d{3}\)\s?\d{3}-\d{4}" maxlength="15" required>
+          </label>
+
+          <label>
             Property Address
             <input type="text" id="propertyAddress" placeholder="1738 Fetty Street, Kingston" maxlength="100" required>
           </label>
@@ -43,6 +48,16 @@
           <label>
             Rent Amount (JMD)
             <input type="number" id="rentAmount" placeholder="50000" min="0" step="0.01" required>
+          </label>
+
+          <label>
+            Rent Period From
+            <input type="date" id="rentFrom" required>
+          </label>
+
+          <label>
+            Rent Period To
+            <input type="date" id="rentTo" required>
           </label>
 
           <label>
@@ -76,30 +91,37 @@
     </section>
 
     <!-- ===== Generated Receipt Section ===== -->
-    <section class="receipt-section" id="receiptDisplay">
-      <article class="receipt">
+    <section class="receipt-section hidden" id="receiptDisplay">
+      <article class="receipt" id="receiptContent">
         <h2>Rent Receipt</h2>
+        <p class="receipt-id"><strong>Receipt ID:</strong> <span id="rReceiptID"></span></p>
         <div class="receipt-body">
-          <p><strong>Tenant Name:</strong> <span id="rTenantName">____________________</span></p>
-          <p><strong>Property Address:</strong> <span id="rPropertyAddress">____________________</span></p>
-          <p><strong>Rent Amount:</strong> <span id="rRentAmount">____________________</span></p>
-          <p><strong>Payment Date:</strong> <span id="rPaymentDate">____________________</span></p>
-          <p><strong>Payment Method:</strong> <span id="rPaymentMethod">____________________</span></p>
-          <p><strong>Landlord:</strong> <span id="rLandlordName">____________________</span></p>
+          <p><strong>Tenant Name:</strong> <span id="rTenantName"></span></p>
+          <p><strong>Phone Number:</strong> <span id="rPhoneNumber"></span></p>
+          <p><strong>Property Address:</strong> <span id="rPropertyAddress"></span></p>
+          <p><strong>Rent Amount:</strong> <span id="rRentAmount"></span></p>
+          <p><strong>Rent Period:</strong> <span id="rRentPeriod"></span></p>
+          <p><strong>Payment Date:</strong> <span id="rPaymentDate"></span></p>
+          <p><strong>Payment Method:</strong> <span id="rPaymentMethod"></span></p>
+          <p><strong>Landlord:</strong> <span id="rLandlordName"></span></p>
         </div>
         <footer>
-          <p>Thank you for your payment.</p>
-          <p><em>This is a computer-generated receipt.</em></p>
+          <p>Receipt ID has been generated.</p>
+          <p><em>Thank you for your payment.</em></p>
         </footer>
       </article>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Property Management Startup | Designed for Graded Lab 2</p>
+    <p>© 2025 Property Management Startup | Designed for CIT2011 Lab 2</p>
   </footer>
 
-  <!-- JS -->
+  <!-- JS Libraries (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Custom JS -->
   <script src="script.js"></script>
 </body>
 </html>
